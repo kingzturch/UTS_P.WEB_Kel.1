@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Here!</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Memeriksa apakah kedua bidang diisi
+        if (username == "" || password == "") {
+          alert("Username dan Password harus diisi!");
+          return false; // Menghentikan pengiriman formulir jika bidang belum diisi
+        }
+      }
+    </script>
+  </head>
+
+   <body>
+    <div class="toolbar" onclick="toggleMenu()">
+        <div class="menu-icon"></div>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#">Game</a></li>
+          <li><a href="#">Pembuat</a></li>
+        </ul>
+    </div>
+    
+
+    <form class="box" action="index.html" method="post" onsubmit="return validateForm()" id="login-form" >
+      <h1>Login</h1>
+      <input type="text" name="Username" placeholder="Username" id="username">
+      <input type="password" name="Password" placeholder="Password" id="password">
+      <input type="submit" name="submit" value="Login">
+    </form>
+    <div id="error-message" class="error-message"></div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
+
